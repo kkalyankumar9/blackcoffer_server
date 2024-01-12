@@ -1,11 +1,12 @@
 const  express=require("express");
 const { connectionDB } = require("./db");
 const { dataRouter } = require("./Routes/DataRoute");
-const cors = require('cors')
+const cors = require('cors');
 const app =  express()
+app.use(cors())
 app.use(express.json())
 app.use("/",dataRouter)
-app.use(cors())
+
 
 
 const port = process.env.PORT
